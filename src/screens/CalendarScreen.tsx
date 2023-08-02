@@ -2,14 +2,11 @@ import {SafeAreaView} from 'react-native';
 import React from 'react';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
+import { StyledSafeAreaView } from "@components/BaseStyledComponents";
 
 const CalendarScreen = () => {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: '#F5F6FA',
-      }}>
+    <StyledSafeAreaView>
       <Container>
         <TopBar>
           <Title>캘린더</Title>
@@ -27,7 +24,7 @@ const CalendarScreen = () => {
           </ButtonField>
         </Schedule>
       </Container>
-    </SafeAreaView>
+    </StyledSafeAreaView>
   );
 };
 

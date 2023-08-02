@@ -19,3 +19,8 @@ export const SuitText = styled.Text<IFontTextProps>`
   font-weight: ${props => props.fontWeight || 400};
   font-size: ${props => props.fontSize || 16}px;
 `;
+
+export const StyledSafeAreaView = styled.SafeAreaView`
+  flex: 1;
+  background-color: #f5f6fa;
+`;

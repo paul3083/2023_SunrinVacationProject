@@ -1,12 +1,11 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
-import {Column, SuitText} from '@components/BaseStyledComponents';
+import { Column, StyledSafeAreaView, SuitText } from "@components/BaseStyledComponents";
 import LocationCardList from '@components/LocationCardList';
 import Header from '@components/Header';
 
 const LocationScreen = () => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#F5F6FA'}}>
+    <StyledSafeAreaView>
       <Header title={'장소'} />
       <Column style={{gap: 24}}>
         <LocationCardList />
@@ -24,7 +23,7 @@ const LocationScreen = () => {
           <LocationCardList orderByHeartCount={true} />
         </Column>
       </Column>
-    </SafeAreaView>
+    </StyledSafeAreaView>
   );
 };
 

@@ -1,11 +1,13 @@
 import React from "react";
 import {SafeAreaView, Text } from "react-native";
+import { StyledSafeAreaView } from "@components/BaseStyledComponents";
+import Header from "@components/Header";
 
 const SettingScreen = () => {
   return (
-    <SafeAreaView>
-      <Text>d</Text>
-    </SafeAreaView>
+    <StyledSafeAreaView>
+      <Header title={'설정'} />
+    </StyledSafeAreaView>
   );
 };
 

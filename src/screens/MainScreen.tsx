@@ -4,12 +4,12 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Icon from "@components/Icon";
 import {Row} from '@components/BaseStyledComponents';
 import styled from 'styled-components/native';
+import Header from "@components/Header";
 
 const MainScreen = () => {
   return (
     <SafeAreaView>
-      <Row />
-      <Icon name={'map'} color={'#000000'} size={30} />
+      <Header title={'홈'} />
     </SafeAreaView>
   );
 };
