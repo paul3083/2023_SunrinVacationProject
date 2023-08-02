@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "748220056704",
+    "project_id": "sunrinvacationproject",
+    "storage_bucket": "sunrinvacationproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748220056704:android:f190d192477c9b621f5265",
+        "android_client_info": {
+          "package_name": "com.sunrinvacationproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748220056704-bjen2iog3lqdf4jtlpnl3vkbueur41v8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sunrinvacationproject",
+            "certificate_hash": "24292cf0679fedfd5520a10dd84e618a58a43d67"
+          }
+        },
+        {
+          "client_id": "748220056704-ee6j2rhiif6k3rmf659si3o5cm7j4dij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAppOXPARLlH0piwnoY2CfLKDIPXVMgN1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748220056704-ee6j2rhiif6k3rmf659si3o5cm7j4dij.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "748220056704-0mkc2p0b6h2p9jfkpcu1tdmsspkf6vou.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.SunrinVacationProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

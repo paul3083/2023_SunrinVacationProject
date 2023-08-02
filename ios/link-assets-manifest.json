@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/SUIT-Variable.ttf",
+      "sha1": "ccfe427ecd9996d6711b059202b29288db440f6e"
+    },
+    {
+      "path": "src/assets/fonts/icomoon.ttf",
+      "sha1": "d463ed86486d9567bfd05a26801dd3dc71c91ae1"
+    }
+  ]
+}
