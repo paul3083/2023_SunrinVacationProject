@@ -15,8 +15,8 @@
 		4E32736849F02A0081083798 /* Pods_SunrinVacationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97993D77119B389B7AB54F41 /* Pods_SunrinVacationProject.framework */; };
 		780A8EE92A797D430015BD31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 780A8EE82A797D430015BD31 /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		949EF2602E054B16A151346D /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7068BA21FCB142118B8EA512 /* icomoon.ttf */; };
 		F0A04D602B3E7C254A232FF8 /* Pods_SunrinVacationProject_SunrinVacationProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154FF69709EB7452C6AB8C99 /* Pods_SunrinVacationProject_SunrinVacationProjectTests.framework */; };
+		B3A2837525F14F4D9EE15BDE /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B97954396E8D41A2BC67D635 /* icomoon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +44,12 @@
 		3B4392A12AC88292D35C810B /* Pods-SunrinVacationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunrinVacationProject.debug.xcconfig"; path = "Target Support Files/Pods-SunrinVacationProject/Pods-SunrinVacationProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SunrinVacationProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunrinVacationProject.release.xcconfig"; path = "Target Support Files/Pods-SunrinVacationProject/Pods-SunrinVacationProject.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SunrinVacationProject-SunrinVacationProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunrinVacationProject-SunrinVacationProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SunrinVacationProject-SunrinVacationProjectTests/Pods-SunrinVacationProject-SunrinVacationProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7068BA21FCB142118B8EA512 /* icomoon.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = icomoon.ttf; path = ../src/assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		780A8EE82A797D430015BD31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SunrinVacationProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SunrinVacationProject-SunrinVacationProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunrinVacationProject-SunrinVacationProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SunrinVacationProject-SunrinVacationProjectTests/Pods-SunrinVacationProject-SunrinVacationProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		97993D77119B389B7AB54F41 /* Pods_SunrinVacationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunrinVacationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B97954396E8D41A2BC67D635 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				292E380551954ACFBF6250A4 /* SUIT-Variable.ttf */,
-				7068BA21FCB142118B8EA512 /* icomoon.ttf */,
+				B97954396E8D41A2BC67D635 /* icomoon.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				780A8EE92A797D430015BD31 /* GoogleService-Info.plist in Resources */,
 				0208590601564C518AE90B6A /* SUIT-Variable.ttf in Resources */,
-				949EF2602E054B16A151346D /* icomoon.ttf in Resources */,
+				B3A2837525F14F4D9EE15BDE /* icomoon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
