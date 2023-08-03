@@ -21,8 +21,8 @@ const Header = ({title}: IHeaderProps) => {
 const Container = styled.View`
   display: flex;
   flex-direction: row;
-  width: 100%;
-  padding: 24px;
+  width: max-content;
+  margin: 24px;
   justify-content: space-between;
   align-items: center;
 `;
