@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from "@components/Icon";
-import {Row} from '@components/BaseStyledComponents';
+import {Row} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Header from "@components/Header";
 

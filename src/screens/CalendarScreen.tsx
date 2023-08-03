@@ -2,7 +2,7 @@ import {SafeAreaView} from 'react-native';
 import React from 'react';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import { StyledSafeAreaView } from "@components/BaseStyledComponents";
+import { StyledSafeAreaView } from "@components/Atomic";
 
 const CalendarScreen = () => {
   return (

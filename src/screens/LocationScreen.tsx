@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, StyledSafeAreaView, SuitText } from "@components/BaseStyledComponents";
+import { Column, StyledSafeAreaView, SuitText } from "@components/Atomic";
 import LocationCardList from '@components/LocationCardList';
 import Header from '@components/Header';
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Column, Row, SuitText } from "@components/BaseStyledComponents";
+import { Column, Row, SuitText } from "@components/Atomic";
 import Icon from "@components/Icon";
 import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
 

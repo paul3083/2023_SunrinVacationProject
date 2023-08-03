@@ -1,5 +1,5 @@
 import React from 'react';
-import {SuitText} from '@components/BaseStyledComponents';
+import {SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
 
