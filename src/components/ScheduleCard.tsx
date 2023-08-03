@@ -30,7 +30,6 @@ const ScheduleCard = ({schedule, time}: IScheduleCardProps) => {
 const Container = styled.TouchableOpacity`
   width: 342px;
   height: 77px;
-  flex-shrink: 0;
   border-radius: 15px;
   background: #fff;
 `;

@@ -27,7 +27,8 @@ const Container = styled.View`
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 24px;
+  width: 100%;
+  margin: 0px 24px;
   gap: 24px;
 `;
 
