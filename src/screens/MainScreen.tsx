@@ -1,16 +1,12 @@
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Icon from "@components/Icon";
-import {Row} from '@components/BaseStyledComponents';
-import styled from 'styled-components/native';
-import Header from "@components/Header";
+import Header from '@components/Header';
+import {StyledSafeAreaView} from '@components/Atomic';
 
 const MainScreen = () => {
   return (
-    <SafeAreaView>
+    <StyledSafeAreaView>
       <Header title={'홈'} />
-    </SafeAreaView>
+    </StyledSafeAreaView>
   );
 };
 

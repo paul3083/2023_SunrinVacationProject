@@ -1,5 +1,5 @@
 import React from 'react';
-import {SuitText} from '@components/BaseStyledComponents';
+import {SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
 
@@ -21,8 +21,8 @@ const Header = ({title}: IHeaderProps) => {
 const Container = styled.View`
   display: flex;
   flex-direction: row;
-  width: 100%;
-  padding: 24px;
+  width: max-content;
+  margin: 24px;
   justify-content: space-between;
   align-items: center;
 `;

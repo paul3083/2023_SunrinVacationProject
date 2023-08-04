@@ -2,7 +2,7 @@ import {SafeAreaView} from 'react-native';
 import React from 'react';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import {StyledSafeAreaView, SuitText} from '@components/BaseStyledComponents';
+import { StyledSafeAreaView } from "@components/Atomic";
 import ScheduleCard from '@components/ScheduleCard';
 import Header from '@components/Header';
 

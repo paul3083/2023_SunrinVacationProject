@@ -3,7 +3,7 @@ import firestore, {
   FirebaseFirestoreTypes,
 } from '@react-native-firebase/firestore';
 import LocationCard from '@components/LocationCard';
-import {Row} from '@components/BaseStyledComponents';
+import {Row} from '@components/Atomic';
 import {ScrollView, View} from 'react-native';
 
 // import GeoPoint = FirebaseFirestoreTypes.GeoPoint;
