@@ -1449,7 +1449,7 @@ SPEC CHECKSUMS:
   React-Core: aaacca67f9ca54f142827e67f44bfbd815875eb6
   React-CoreModules: 32fab1d62416849a3b6dac6feff9d54e5ddc2d1e
   React-cxxreact: 37765b4975541105b2a3322a4b473417c158c869
-  React-debug: 868ee076df1d3466fdc7e9848644c2c1973d9735
+  React-debug: e1c35c2871fb31b9fba9657fa4b2feb460aec5ad
   React-hermes: 935ae71fb3d7654e947beba8498835cd5e479707
   React-jsi: ec628dc7a15ffea969f237b0ea6d2fde212b19dd
   React-jsiexecutor: 59d1eb03af7d30b7d66589c410f13151271e8006
@@ -1458,7 +1458,7 @@ SPEC CHECKSUMS:
   react-native-google-maps: dd12cdd86b8e3fedbbb671676aedaa2f656e2ccd
   react-native-maps: 667f9b975549c6fa9b1631bf859440f68ebd3b8f
   react-native-safe-area-context: 9697629f7b2cda43cf52169bb7e0767d330648c2
-  React-NativeModulesApple: 848428e6f250b356561edb9c7ae0ac64ec54ccee
+  React-NativeModulesApple: 14da44a5b31de8723e7d9665f2652eca5ddf0fcb
   React-perflogger: 6bd153e776e6beed54c56b0847e1220a3ff92ba5
   React-RCTActionSheet: c0b62af44e610e69d9a2049a682f5dba4e9dff17
   React-RCTAnimation: fe7005136b58f58871cab2f70732343b6e330d30
@@ -1472,9 +1472,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: ea3a68a49873a54ced927c90923fc6932baf344a
   React-rncore: 9672a017af4a7da7495d911f0b690cbcae9dd18d
   React-runtimeexecutor: 369ae9bb3f83b65201c0c8f7d50b72280b5a1dbc
-  React-runtimescheduler: 837e680a7d14ac35945b9d65085c21ef52e16062
-  React-utils: 40c644ed600c6dbacf030d2d12fe1785c35210c2
-  ReactCommon: fd51ef1c012c456bf6c8f9998a288943cc409a0c
+  React-runtimescheduler: 1de387df542a20668835450dd66b484535e12c32
+  React-utils: 358e946236c477dc8fa704511f5fb4d9ba1150ae
+  ReactCommon: 873f0eee5895aa8ca8a55eabe4b915983956574c
   RNFBApp: 147c3274daa84d7410d457510548d5fb3b317e37
   RNFBAuth: 7f10a8eb8b55ec604946d071bdd9a228d80c4486
   RNFBFirestore: 6e4f66156e5762fb26894cc9824bf1e60264f7e9
