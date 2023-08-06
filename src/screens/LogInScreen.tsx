@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {Column, Row, StyledSafeAreaView, SuitText} from '@components/Atomic';
+import React, {useState} from 'react';
+import {Row, StyledSafeAreaView, SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import { Pressable, TouchableOpacity } from "react-native";
-import { LogIn } from "@/lib/auth";
-
+import {TouchableOpacity} from 'react-native';
+import {logIn} from '@/lib/auth';
 
 const LogInScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
@@ -39,7 +38,7 @@ const LogInScreen = ({navigation}: any) => {
               </SuitText>
             </TouchableOpacity>
           </Row>
-          <LogInButton onPress={() => LogIn(email, password)}>
+          <LogInButton onPress={() => logIn(email, password)}>
             <SuitText fontWeight={600} fontSize={17} style={{color: 'white'}}>
               로그인
             </SuitText>
