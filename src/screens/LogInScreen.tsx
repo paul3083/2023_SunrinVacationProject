@@ -1,13 +1,20 @@
-import React, {useState} from 'react';
-import {Row, StyledSafeAreaView, SuitText} from '@components/Atomic';
+import React, {useEffect, useState} from 'react';
+import {Column, Row, StyledSafeAreaView, SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import {TouchableOpacity} from 'react-native';
-import {logIn} from '@/lib/auth';
+import {Alert, Pressable, TouchableOpacity} from 'react-native';
+import {LogIn} from '@/lib/auth';
 
 const LogInScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const resultMessages = {
+    'auth/email-already-in-use': '이미 가입된 이메일입니다.',
+    'auth/wrong-password': '잘못된 비밀번호입니다.',
+    'auth/user-not-found': '존재하지 않는 계정입니다.',
+    'auth/invalid-email': '유효하지 않은 이메일 주소입니다.',
+  };
 
   return (
     <StyledSafeAreaView>
@@ -38,11 +45,37 @@ const LogInScreen = ({navigation}: any) => {
               </SuitText>
             </TouchableOpacity>
           </Row>
-          <LogInButton onPress={() => logIn(email, password)}>
+          <LogInButton
+            onPress={async () => {
+              try {
+                await LogIn(email, password);
+                console.log('Successfully logged in.');
+                // Optionally, you can navigate to another screen after successful login.
+                // navigation.navigate('Home'); // Replace 'Home' with your desired screen name.
+              } catch (e) {
+                const alertMessage = resultMessages[e.code]
+                  ? resultMessages[e.code]
+                  : '알 수 없는 이유로 로그인에 실패하였습니다.';
+                Alert.alert('로그인 실패', alertMessage);
+              }
+            }}>
             <SuitText fontWeight={600} fontSize={17} style={{color: 'white'}}>
               로그인
             </SuitText>
           </LogInButton>
+          <Row>
+            <SuitText
+              fontWeight={400}
+              fontSize={16}
+              style={{color: 'rgba(28, 27, 31, 0.30)'}}>
+              계정이 없으신가요?
+            </SuitText>
+            <RegisterButton onPress={() => navigation.navigate('Register')}>
+              <SuitText fontWeight={600} fontSize={16}>
+                회원가입하기
+              </SuitText>
+            </RegisterButton>
+          </Row>
         </FormContainer>
       </Container>
     </StyledSafeAreaView>
@@ -94,4 +127,7 @@ const LogInButton = styled.TouchableOpacity`
   border-radius: 15px;
   background-color: #1c1b1f;
 `;
+
+const RegisterButton = styled.TouchableOpacity``;
+
 export default LogInScreen;
