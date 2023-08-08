@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, StyledSafeAreaView, SuitText } from "@components/BaseStyledComponents";
+import { Column, StyledSafeAreaView, SuitText } from "@components/Atomic";
 import LocationCardList from '@components/LocationCardList';
 import Header from '@components/Header';
 
@@ -11,8 +11,8 @@ const LocationScreen = () => {
         <LocationCardList />
         <Column style={{gap: 8}}>
           <SuitText
-            fontWeight={500}
-            fontSize={16}
+            weight={500}
+            size={16}
             style={{
               color: '#7B7B7D',
               width: '100%',

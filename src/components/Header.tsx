@@ -1,5 +1,5 @@
 import React from 'react';
-import {SuitText} from '@components/BaseStyledComponents';
+import {SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
 
@@ -10,7 +10,7 @@ interface IHeaderProps {
 const Header = ({title}: IHeaderProps) => {
   return (
     <Container>
-      <SuitText fontWeight={800} fontSize={28}>
+      <SuitText weight={800} size={28}>
         {title}
       </SuitText>
       <Icon name={'notifications'} size={30} color={'#1C1B1F'} />
