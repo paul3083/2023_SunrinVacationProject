@@ -1,33 +1,33 @@
-import React from "react";
-import styled from "styled-components/native";
-import { Column, Row, SuitText } from "@components/Atomic";
-import Icon from "@components/Icon";
-import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
+import React from 'react';
+import styled from 'styled-components/native';
+import {Column, Row, SuitText} from '@components/Atomic';
+import Icon from '@components/Icon';
+import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 
-interface ILocationCardProps {
+interface LocationCardProps {
   name: string;
   imageUrl: string;
   heartCount: number;
 }
 
-const LocationCard = ({name, imageUrl, heartCount}: ILocationCardProps) => {
+const LocationCard = ({name, imageUrl, heartCount}: LocationCardProps) => {
   return (
     <Container>
-      <Column style={{gap: 12}}>
+      <Column gap={12}>
         <LocationImage source={{uri: imageUrl}} />
-        <Column style={{gap: 4, marginLeft: 12}}>
-          <SuitText fontWeight={700} fontSize={20}>
+        <Column gap={4} style={{marginLeft: 12}}>
+          <SuitText weight={700} size={20}>
             {name}
           </SuitText>
-          <Row style={{gap: 4, alignItems: 'center'}}>
+          <Row gap={4} style={{alignItems: 'center'}}>
             <Icon name={'favorite'} size={18} />
-            <SuitText fontWeight={700} fontSize={16}>
+            <SuitText weight={700} size={16}>
               {heartCount}
             </SuitText>
           </Row>
-          <Row style={{gap: 4, alignItems: 'center'}}>
+          <Row gap={4} style={{alignItems: 'center'}}>
             <Icon name={'location_on'} size={18} />
-            <SuitText fontWeight={700} fontSize={16}>
+            <SuitText weight={700} size={16}>
               {`${0.8} km`}
             </SuitText>
           </Row>
