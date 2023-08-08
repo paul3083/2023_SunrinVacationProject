@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import Icon from '@components/Icon';
-import {Column, Row, SuitText} from '@components/BaseStyledComponents';
+import {Column, SuitText} from '@components/Atomic';
 
 interface IScheduleCardProps {
   schedule: string;
@@ -12,26 +11,28 @@ interface IScheduleCardProps {
 const ScheduleCard = ({schedule, time}: IScheduleCardProps) => {
   return (
     <Container>
-      <Row style={{margin: 12}}>
-        <Column style={{gap: 8}}>
-          <SuitText fontWeight={700} fontSize={20}>
-            {schedule}
-          </SuitText>
-          <SuitText fontWeight={400} fontSize={16}>
-            {time}
-          </SuitText>
-        </Column>
-        <Icon name={'arrow_forward_ios'} size={24} />
-      </Row>
+      <Column gap={4}>
+        <SuitText weight={700} size={20}>
+          {schedule}
+        </SuitText>
+        <SuitText weight={400} size={16} color={'#B2B2B2'}>
+          {time}
+        </SuitText>
+      </Column>
+      <Icon name={'arrow_forward_ios'} size={24} color={'#B2B2B2'} />
     </Container>
   );
 };
 
 const Container = styled.TouchableOpacity`
-  width: 342px;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   height: 77px;
   border-radius: 15px;
-  background: #fff;
+  padding: 12px 16px;
+  background: white;
 `;
 
 export default ScheduleCard;
