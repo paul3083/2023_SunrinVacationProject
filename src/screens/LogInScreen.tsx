@@ -21,7 +21,7 @@ const LogInScreen = ({navigation}: any) => {
       <Container>
         <TitleContainer>
           <Icon name={'group'} size={32} color={'#1C1B1F'} />
-          <SuitText weight={600} size={24}>
+          <SuitText fontWeight={600} fontSize={24}>
             로그인이 필요합니다
           </SuitText>
         </TitleContainer>
@@ -40,7 +40,7 @@ const LogInScreen = ({navigation}: any) => {
           />
           <Row style={{justifyContent: 'flex-end', width: '100%'}}>
             <TouchableOpacity onPress={() => {}}>
-              <SuitText weight={600} size={16}>
+              <SuitText fontWeight={600} fontSize={16}>
                 비밀번호 찾기
               </SuitText>
             </TouchableOpacity>
