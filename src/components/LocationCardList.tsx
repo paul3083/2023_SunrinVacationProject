@@ -6,21 +6,19 @@ import LocationCard from '@components/LocationCard';
 import {Row} from '@components/Atomic';
 import {ScrollView, View} from 'react-native';
 
-// import GeoPoint = FirebaseFirestoreTypes.GeoPoint;
-
-interface ILocationCardProps {
+interface LocationCardProps {
   name: string;
   imageUrl: string;
   heartCount: number;
   geoPoint?: FirebaseFirestoreTypes.GeoPoint;
 }
 
-interface ILocationCardListProps {
+interface LocationCardListProps {
   orderByHeartCount?: boolean;
 }
 
-const LocationCardList = ({orderByHeartCount}: ILocationCardListProps) => {
-  const [locationList, setLocationList] = React.useState<ILocationCardProps[]>(
+const LocationCardList = ({orderByHeartCount}: LocationCardListProps) => {
+  const [locationList, setLocationList] = React.useState<LocationCardProps[]>(
     [],
   );
   useEffect(() => {
@@ -29,7 +27,7 @@ const LocationCardList = ({orderByHeartCount}: ILocationCardListProps) => {
       : firestore().collection('Locations');
     collection.onSnapshot(
       querySnapshot => {
-        const _locationList: ILocationCardProps[] = [];
+        const _locationList: LocationCardProps[] = [];
         querySnapshot.forEach((doc, _) => {
           _locationList.push({
             name: doc.get('name') as string,
@@ -43,15 +41,15 @@ const LocationCardList = ({orderByHeartCount}: ILocationCardListProps) => {
         console.log(error);
       },
     );
-  }, []);
+  }, [orderByHeartCount]);
 
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-      <Row style={{gap: 24}}>
+      <Row gap={24}>
         <View />
-        {locationList.map((location, _) => (
+        {locationList.map((location, index) => (
           <LocationCard
-            key={location.name}
+            key={index}
             name={location.name}
             imageUrl={location.imageUrl}
             heartCount={location.heartCount}

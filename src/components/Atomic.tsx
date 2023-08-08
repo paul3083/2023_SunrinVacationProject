@@ -17,15 +17,15 @@ export const Row = styled.View<ContainerProps>`
 `;
 
 interface FontTextProps {
-  fontSize?: number;
-  fontWeight?: number;
+  size?: number;
+  weight?: number;
   color?: string;
 }
 
 export const SuitText = styled.Text<FontTextProps>`
   font-family: 'SUIT Variable';
-  font-weight: ${props => props.fontWeight || 400};
-  font-size: ${props => props.fontSize || 16}px;
+  font-weight: ${props => props.weight || 400};
+  font-size: ${props => props.size || 16}px;
   color: ${props => props.color || '#1C1B1F'};
 `;
 

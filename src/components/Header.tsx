@@ -10,7 +10,7 @@ interface IHeaderProps {
 const Header = ({title}: IHeaderProps) => {
   return (
     <Container>
-      <SuitText fontWeight={800} fontSize={28}>
+      <SuitText weight={800} size={28}>
         {title}
       </SuitText>
       <Icon name={'notifications'} size={30} color={'#1C1B1F'} />
@@ -21,8 +21,7 @@ const Header = ({title}: IHeaderProps) => {
 const Container = styled.View`
   display: flex;
   flex-direction: row;
-  width: max-content;
-  margin: 24px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 `;
