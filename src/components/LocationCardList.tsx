@@ -7,9 +7,9 @@ import {Row} from '@components/Atomic';
 import {ScrollView, View} from 'react-native';
 
 interface LocationCardProps {
+  locationId: string;
   name: string;
   imageUrl: string;
-  heartCount: number;
   geoPoint?: FirebaseFirestoreTypes.GeoPoint;
 }
 
@@ -30,9 +30,9 @@ const LocationCardList = ({orderByHeartCount}: LocationCardListProps) => {
         const _locationList: LocationCardProps[] = [];
         querySnapshot.forEach((doc, _) => {
           _locationList.push({
+            locationId: doc.id,
             name: doc.get('name') as string,
             imageUrl: doc.get('imageUrl') as string,
-            heartCount: doc.get('heartCount') as number,
           });
         });
         setLocationList(_locationList);
@@ -50,9 +50,9 @@ const LocationCardList = ({orderByHeartCount}: LocationCardListProps) => {
         {locationList.map((location, index) => (
           <LocationCard
             key={index}
+            locationId={location.locationId}
             name={location.name}
             imageUrl={location.imageUrl}
-            heartCount={location.heartCount}
           />
         ))}
       </Row>
