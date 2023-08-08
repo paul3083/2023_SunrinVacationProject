@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import Icon from '@components/Icon';
-import {Column, Row, SuitText} from '@components/BaseStyledComponents';
+import {Column, Row, SuitText} from '@components/Atomic';
 
 interface IScheduleCardProps {
   schedule: string;
@@ -14,10 +14,10 @@ const ScheduleCard = ({schedule, time}: IScheduleCardProps) => {
     <Container>
       <Row style={{margin: 12}}>
         <Column style={{gap: 8}}>
-          <SuitText fontWeight={700} fontSize={20}>
+          <SuitText weight={700} size={20}>
             {schedule}
           </SuitText>
-          <SuitText fontWeight={400} fontSize={16}>
+          <SuitText weight={400} size={16}>
             {time}
           </SuitText>
         </Column>
