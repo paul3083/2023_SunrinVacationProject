@@ -26,7 +26,7 @@ export const SuitText = styled.Text<FontTextProps>`
   font-family: 'SUIT Variable';
   font-weight: ${props => props.weight || 400};
   font-size: ${props => props.size || 16}px;
-  color: ${props => props.color || '#1C1B1F'};
+  color: ${props => props.color || 'black'};
 `;
 
 export const StyledSafeAreaView = styled.SafeAreaView`
