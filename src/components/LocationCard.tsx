@@ -1,37 +1,65 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components/native';
-import {Column, Row, SuitText} from '@components/Atomic';
+import {Column, Gap, Row, SuitText, Wrapper} from '@components/Atomic';
 import Icon from '@components/Icon';
-import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
+import firestore, {
+  FirebaseFirestoreTypes,
+} from '@react-native-firebase/firestore';
+import FavoriteButton from '@components/FavoriteButton';
 
 interface LocationCardProps {
+  locationId: string;
   name: string;
   imageUrl: string;
-  heartCount: number;
 }
 
-const LocationCard = ({name, imageUrl, heartCount}: LocationCardProps) => {
+const LocationCard = ({locationId, name, imageUrl}: LocationCardProps) => {
+  const [heartCount, setHeartCount] = React.useState(0);
+  useEffect(() => {
+    firestore()
+      .collection(`Locations/${locationId}/users`)
+      .onSnapshot(
+        querySnapshot => {
+          let _hardCount = 0;
+          querySnapshot.forEach((doc, _) => {
+            if (doc.get('isPressed') as boolean) {
+              _hardCount++;
+            }
+          });
+          setHeartCount(_hardCount);
+        },
+        error => {
+          console.log(error);
+        },
+      );
+  }, [locationId]);
   return (
     <Container>
       <Column gap={12}>
         <LocationImage source={{uri: imageUrl}} />
-        <Column gap={4} style={{marginLeft: 12}}>
-          <SuitText weight={700} size={20}>
-            {name}
-          </SuitText>
-          <Row gap={4} style={{alignItems: 'center'}}>
-            <Icon name={'favorite'} size={18} />
-            <SuitText weight={700} size={16}>
-              {heartCount}
+        <Wrapper padding={12}>
+          <Column gap={4}>
+            <SuitText weight={700} size={20}>
+              {name}
             </SuitText>
+            <Row gap={4} style={{alignItems: 'center'}}>
+              <Icon name={'favorite'} size={20} />
+              <SuitText weight={700} size={16}>
+                {heartCount}
+              </SuitText>
+            </Row>
+            <Row gap={4} style={{alignItems: 'center'}}>
+              <Icon name={'location_on'} size={18} />
+              <SuitText weight={700} size={16}>
+                {`${0.8} km`}
+              </SuitText>
+            </Row>
+          </Column>
+          <Gap height={19} />
+          <Row style={{justifyContent: 'flex-end'}}>
+            <FavoriteButton locationId={locationId} />
           </Row>
-          <Row gap={4} style={{alignItems: 'center'}}>
-            <Icon name={'location_on'} size={18} />
-            <SuitText weight={700} size={16}>
-              {`${0.8} km`}
-            </SuitText>
-          </Row>
-        </Column>
+        </Wrapper>
       </Column>
     </Container>
   );

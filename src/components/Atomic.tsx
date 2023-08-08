@@ -41,7 +41,7 @@ export const Wrapper = styled.View<WrapperProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: ${props => props.padding || 0}px;
+  padding: 0 ${props => props.padding || 0}px;
 `;
 
 interface GapProps {
