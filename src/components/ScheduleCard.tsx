@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import Icon from '@components/Icon';
-import {Column, Row, SuitText} from '@components/BaseStyledComponents';
+import {Column, Row, SuitText} from '@components/Atomic';
 
 interface IScheduleCardProps {
   schedule: string;
