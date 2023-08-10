@@ -1,22 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
 import {Column, SuitText} from '@components/Atomic';
 
 interface IScheduleCardProps {
-  schedule: string;
-  time: string;
+  title: string;
+  time: Date;
 }
 
-const ScheduleCard = ({schedule, time}: IScheduleCardProps) => {
+const ScheduleCard = ({title, time}: IScheduleCardProps) => {
+  const [hour, setHour] = React.useState<number>(0);
+  const [minute, setMinute] = React.useState<number>(0);
+  useEffect(() => {
+    console.log(time);
+    setHour(time.getHours());
+    setMinute(time.getMinutes());
+  }, [time]);
   return (
     <Container>
       <Column gap={4}>
         <SuitText weight={700} size={20}>
-          {schedule}
+          {title}
         </SuitText>
-        <SuitText weight={400} size={16} color={'#B2B2B2'}>
-          {time}
+        <SuitText weight={500} size={16} color={'#B2B2B2'}>
+          {`${hour}:${minute}`}
         </SuitText>
       </Column>
       <Icon name={'arrow_forward_ios'} size={24} color={'#B2B2B2'} />
