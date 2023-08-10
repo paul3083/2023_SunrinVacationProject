@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {Gap, Row, StyledSafeAreaView, SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import {TouchableOpacity} from 'react-native';
 import {logIn} from '@/lib/auth';
 
 const LogInScreen = ({navigation}: any) => {
