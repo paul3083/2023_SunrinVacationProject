@@ -14,10 +14,10 @@ const ScheduleCard = ({schedule, time}: IScheduleCardProps) => {
     <Container>
       <Row style={{margin: 12}}>
         <Column style={{gap: 8}}>
-          <SuitText fontWeight={700} fontSize={20}>
+          <SuitText weight={700} size={20}>
             {schedule}
           </SuitText>
-          <SuitText fontWeight={400} fontSize={16}>
+          <SuitText weight={400} size={16}>
             {time}
           </SuitText>
         </Column>

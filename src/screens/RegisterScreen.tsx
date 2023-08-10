@@ -2,12 +2,8 @@ import React, {useState} from 'react';
 import {Column, StyledSafeAreaView, SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import {useNavigation} from '@react-navigation/native';
-import {Register} from '@/lib/auth';
-import {Alert} from 'react-native';
 
 const RegisterScreen = () => {
-  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -18,19 +14,20 @@ const RegisterScreen = () => {
     'auth/user-not-found': '존재하지 않는 계정입니다.',
     'auth/invalid-email': '유효하지 않은 이메일 주소입니다.',
   };
+
   return (
     <StyledSafeAreaView>
       <Container>
         <TitleContainer>
           <Icon name={'group_add'} size={32} color={'#1C1B1F'} />
-          <SuitText fontWeight={600} fontSize={24}>
+          <SuitText weight={600} size={24}>
             로그인이 필요합니다
           </SuitText>
         </TitleContainer>
         <Space />
         <RegisterContainer>
           <Column style={{gap: 8}}>
-            <SuitText fontWeight={600} fontSize={16}>
+            <SuitText weight={600} size={16}>
               이메일 입력
             </SuitText>
             <InputBox
@@ -40,7 +37,7 @@ const RegisterScreen = () => {
             />
           </Column>
           <Column style={{gap: 8}}>
-            <SuitText fontWeight={600} fontSize={16}>
+            <SuitText weight={600} size={16}>
               비밀번호 생성
             </SuitText>
             <InputBox
@@ -50,7 +47,7 @@ const RegisterScreen = () => {
             />
           </Column>
           <Column style={{gap: 8}}>
-            <SuitText fontWeight={600} fontSize={16}>
+            <SuitText weight={600} size={16}>
               비밀번호 확인
             </SuitText>
             <InputBox
@@ -60,27 +57,8 @@ const RegisterScreen = () => {
               secureTextEntry={true}
             />
           </Column>
-          <RegisterButton
-            onPress={async () => {
-              if (password !== confirmPassword) {
-                Alert.alert(
-                  '비밀번호 확인',
-                  '비밀번호와 확인 비밀번호가 일치하지 않습니다.',
-                );
-                return;
-              }
-              try {
-                await Register({email, password});
-                console.log('Successfully registered.');
-                navigation.navigate('LogIn');
-              } catch (e) {
-                const alertMessage = resultMessages[e.code]
-                  ? resultMessages[e.code]
-                  : '알 수 없는 이유로 회원가입에 실패하였습니다.';
-                Alert.alert('회원가입 실패', alertMessage);
-              }
-            }}>
-            <SuitText fontWeight={600} fontSize={17} style={{color: 'white'}}>
+          <RegisterButton>
+            <SuitText weight={600} size={17} style={{color: 'white'}}>
               가입하기
             </SuitText>
           </RegisterButton>

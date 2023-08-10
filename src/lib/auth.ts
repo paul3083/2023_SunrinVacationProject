@@ -8,7 +8,6 @@ export const logOut = async () => {
   await auth().signOut();
 };
 
-
 export const register = (email: string, password: string) => {
   return auth().createUserWithEmailAndPassword(email, password);
 };
