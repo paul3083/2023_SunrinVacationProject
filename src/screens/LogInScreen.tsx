@@ -31,13 +31,13 @@ const LogInScreen = ({navigation}: any) => {
             secureTextEntry={true}
             placeholder={'비밀번호를 입력해주세요...'}
           />
-          <Row style={{justifyContent: 'flex-end', width: '100%'}}>
-            <TouchableOpacity onPress={() => {}}>
-              <SuitText weight={600} size={16}>
-                비밀번호 찾기
-              </SuitText>
-            </TouchableOpacity>
-          </Row>
+          {/*<Row style={{justifyContent: 'flex-end', width: '100%'}}>*/}
+          {/*  <TouchableOpacity onPress={() => {}}>*/}
+          {/*    <SuitText weight={600} size={16}>*/}
+          {/*      비밀번호 찾기*/}
+          {/*    </SuitText>*/}
+          {/*  </TouchableOpacity>*/}
+          {/*</Row>*/}
           <LogInButton
             onPress={() => {
               logIn(email, password);

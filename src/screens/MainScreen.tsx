@@ -1,11 +1,16 @@
 import React from 'react';
 import Header from '@components/Header';
 import {StyledSafeAreaView} from '@components/Atomic';
+import {Text, TouchableOpacity} from 'react-native';
+import {logOut} from '@/lib/auth';
 
 const MainScreen = () => {
   return (
     <StyledSafeAreaView>
       <Header title={'홈'} />
+      <TouchableOpacity onPress={logOut}>
+        <Text>돌아가기</Text>
+      </TouchableOpacity>
     </StyledSafeAreaView>
   );
 };

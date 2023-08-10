@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Column, Gap, StyledSafeAreaView, SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import {register} from '@/lib/auth';
+import { logOut, register } from "@/lib/auth";
 
 const RegisterScreen = () => {
   const [email, setEmail] = useState('');
