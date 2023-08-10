@@ -1,19 +1,13 @@
 import React, {useState} from 'react';
-import {Column, StyledSafeAreaView, SuitText} from '@components/Atomic';
+import {Column, Gap, StyledSafeAreaView, SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
+import {register} from '@/lib/auth';
 
 const RegisterScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
-  const resultMessages = {
-    'auth/email-already-in-use': '이미 가입된 이메일입니다.',
-    'auth/wrong-password': '잘못된 비밀번호입니다.',
-    'auth/user-not-found': '존재하지 않는 계정입니다.',
-    'auth/invalid-email': '유효하지 않은 이메일 주소입니다.',
-  };
 
   return (
     <StyledSafeAreaView>
@@ -24,7 +18,7 @@ const RegisterScreen = () => {
             로그인이 필요합니다
           </SuitText>
         </TitleContainer>
-        <Space />
+        <Gap height={48} />
         <RegisterContainer>
           <Column style={{gap: 8}}>
             <SuitText weight={600} size={16}>
@@ -57,7 +51,12 @@ const RegisterScreen = () => {
               secureTextEntry={true}
             />
           </Column>
-          <RegisterButton>
+          <RegisterButton
+            onPress={() => {
+              if (password === confirmPassword) {
+                register(email, password);
+              }
+            }}>
             <SuitText weight={600} size={17} style={{color: 'white'}}>
               가입하기
             </SuitText>
@@ -79,10 +78,6 @@ const TitleContainer = styled.View`
   align-self: center;
   align-items: center;
   gap: 8px;
-`;
-
-const Space = styled.View`
-  height: 48px;
 `;
 
 const RegisterContainer = styled.View`
