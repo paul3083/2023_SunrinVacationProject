@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {Row, StyledSafeAreaView, SuitText} from '@components/Atomic';
+import {Gap, Row, StyledSafeAreaView, SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
-import {TouchableOpacity} from 'react-native';
 import {logIn} from '@/lib/auth';
 
 const LogInScreen = ({navigation}: any) => {
@@ -18,7 +17,7 @@ const LogInScreen = ({navigation}: any) => {
             로그인이 필요합니다
           </SuitText>
         </TitleContainer>
-        <Space />
+        <Gap height={48} />
         <FormContainer>
           <InputBox
             value={email}
@@ -31,27 +30,36 @@ const LogInScreen = ({navigation}: any) => {
             secureTextEntry={true}
             placeholder={'비밀번호를 입력해주세요...'}
           />
-          <Row style={{justifyContent: 'flex-end', width: '100%'}}>
-            <TouchableOpacity onPress={() => {}}>
-              <SuitText weight={600} size={16}>
-                비밀번호 찾기
-              </SuitText>
-            </TouchableOpacity>
-          </Row>
-          <LogInButton onPress={() => logIn(email, password)}>
+          {/*<Row style={{justifyContent: 'flex-end', width: '100%'}}>*/}
+          {/*  <TouchableOpacity onPress={() => {}}>*/}
+          {/*    <SuitText weight={600} size={16}>*/}
+          {/*      비밀번호 찾기*/}
+          {/*    </SuitText>*/}
+          {/*  </TouchableOpacity>*/}
+          {/*</Row>*/}
+          <LogInButton
+            onPress={() => {
+              logIn(email, password);
+            }}>
             <SuitText weight={600} size={17} style={{color: 'white'}}>
               로그인
             </SuitText>
           </LogInButton>
+          <Row>
+            <SuitText weight={400} size={16} style={{color: '#1C1B1F4D'}}>
+              계정이 없으신가요?
+            </SuitText>
+            <RegisterButton onPress={() => navigation.navigate('Register')}>
+              <SuitText weight={600} size={16}>
+                회원가입하기
+              </SuitText>
+            </RegisterButton>
+          </Row>
         </FormContainer>
       </Container>
     </StyledSafeAreaView>
   );
 };
-
-const Space = styled.View`
-  height: 48px;
-`;
 
 const Container = styled.View`
   display: flex;
@@ -94,4 +102,7 @@ const LogInButton = styled.TouchableOpacity`
   border-radius: 15px;
   background-color: #1c1b1f;
 `;
+
+const RegisterButton = styled.TouchableOpacity``;
+
 export default LogInScreen;
