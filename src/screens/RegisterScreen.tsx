@@ -87,7 +87,9 @@ const RegisterContainer = styled.View`
   gap: 16px;
 `;
 
-const InputBox = styled.TextInput`
+const InputBox = styled.TextInput.attrs({
+  placeholderTextColor: '#BBBBBC',
+})`
   width: 100%;
   display: flex;
   border-radius: 15px;

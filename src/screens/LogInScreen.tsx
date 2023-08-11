@@ -74,7 +74,9 @@ const TitleContainer = styled.View`
   gap: 8px;
 `;
 
-const InputBox = styled.TextInput`
+const InputBox = styled.TextInput.attrs({
+  placeholderTextColor: '#BBBBBC',
+})`
   width: 100%;
   display: flex;
   border-radius: 15px;

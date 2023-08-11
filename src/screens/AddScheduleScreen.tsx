@@ -108,7 +108,9 @@ const HeaderContainer = styled.View`
   width: 100%;
 `;
 
-const InputBox = styled.TextInput`
+const InputBox = styled.TextInput.attrs({
+  placeholderTextColor: '#BBBBBC',
+})`
   width: 100%;
   padding: 15px 16px;
   border-radius: 15px;

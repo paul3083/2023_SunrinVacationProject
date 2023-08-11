@@ -54,6 +54,7 @@ const MainScreen = () => {
             const day = date.time.toDate().getDate();
             const dateString = `${month}월 ${day}일`;
             if (_scheduleList.has(dateString)) {
+              // @ts-ignore
               _scheduleList.get(dateString).push(date);
             } else {
               _scheduleList.set(dateString, [date]);
@@ -65,7 +66,7 @@ const MainScreen = () => {
           console.log(error);
         },
       );
-  }, []);
+  }, [setScheduleList]);
   return (
     <StyledSafeAreaView>
       <Header title={'홈'} />
