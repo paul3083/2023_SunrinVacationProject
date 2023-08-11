@@ -36,9 +36,9 @@ const FavoriteButton = ({locationId}: FavoriteButtonProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       {isFocused ? (
-        <Icon name={'favorite'} size={24} />
+        <Icon name={'favorite'} size={30} />
       ) : (
-        <Icon name={'favorite_outline'} size={24} />
+        <Icon name={'favorite_outline'} size={30} />
       )}
     </TouchableOpacity>
   );

@@ -9,12 +9,12 @@ interface IScheduleCardProps {
 }
 
 const ScheduleCard = ({title, time}: IScheduleCardProps) => {
-  const [hour, setHour] = React.useState<number>(0);
-  const [minute, setMinute] = React.useState<number>(0);
+  const [hour, setHour] = React.useState<string>('');
+  const [minute, setMinute] = React.useState<string>('');
   useEffect(() => {
     console.log(time);
-    setHour(time.getHours());
-    setMinute(time.getMinutes());
+    setHour(time.getHours().toString().padStart(2, '0'));
+    setMinute(time.getMinutes().toString().padStart(2, '0'));
   }, [time]);
   return (
     <Container>

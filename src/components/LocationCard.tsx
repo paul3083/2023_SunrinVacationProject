@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components/native';
 import {Column, Gap, Row, SuitText, Wrapper} from '@components/Atomic';
 import Icon from '@components/Icon';
@@ -6,15 +6,17 @@ import firestore, {
   FirebaseFirestoreTypes,
 } from '@react-native-firebase/firestore';
 import FavoriteButton from '@components/FavoriteButton';
+import {Linking} from 'react-native';
 
 interface LocationCardProps {
   locationId: string;
   name: string;
   imageUrl: string;
+  url: string;
 }
 
-const LocationCard = ({locationId, name, imageUrl}: LocationCardProps) => {
-  const [heartCount, setHeartCount] = React.useState(0);
+const LocationCard = ({locationId, name, imageUrl, url}: LocationCardProps) => {
+  const [heartCount, setHeartCount] = useState(0);
   useEffect(() => {
     firestore()
       .collection(`Locations/${locationId}/users`)
@@ -33,8 +35,17 @@ const LocationCard = ({locationId, name, imageUrl}: LocationCardProps) => {
         },
       );
   }, [locationId]);
+
+  // useEffect(() => {
+  //   firestore().collection('Locations').doc(locationId).update({
+  //     heartCount: heartCount,
+  //   });
+  // }, [heartCount, locationId]);
   return (
-    <Container>
+    <Container
+      onPress={async () => {
+        await Linking.openURL(url);
+      }}>
       <Column gap={12}>
         <LocationImage source={{uri: imageUrl}} />
         <Wrapper padding={12}>

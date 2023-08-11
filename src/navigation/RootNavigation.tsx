@@ -4,6 +4,7 @@ import LogInScreen from '@screens/LogInScreen';
 import RegisterScreen from '@screens/RegisterScreen';
 import {firebase} from '@react-native-firebase/auth';
 import BottomNavigation from '@navigation/BottomNavigation';
+import AddScheduleScreen from "@screens/AddScheduleScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,7 +26,10 @@ const RootNavigation = () => {
         headerShown: false,
       }}>
       {isLogIn ? (
-        <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
+        <>
+          <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
+          <Stack.Screen name={'AddSchedule'} component={AddScheduleScreen} />
+        </>
       ) : (
         <>
           <Stack.Screen name="LogIn" component={LogInScreen} />
