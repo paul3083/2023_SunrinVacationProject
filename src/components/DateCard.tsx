@@ -2,7 +2,7 @@ import React from 'react';
 import {SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import {useSetRecoilState} from 'recoil';
-import SelectedDateIndexAtom from '@/atoms/SelectedDateIndexAtom';
+import SelectedDateIndexAtom from '@atoms/selectedDateIndexAtom';
 
 interface DateCardProps {
   index: number;

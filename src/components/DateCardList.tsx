@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row} from '@components/Atomic';
 import DateCard from '@components/DateCard';
-import selectedDateIndexAtom from '@/atoms/SelectedDateIndexAtom';
+import selectedDateIndexAtom from '@atoms/selectedDateIndexAtom';
 import {useRecoilValue} from 'recoil';
 
 const DateCardList = () => {

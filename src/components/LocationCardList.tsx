@@ -10,7 +10,7 @@ interface LocationCardProps {
   locationId: string;
   name: string;
   imageUrl: string;
-  geoPoint?: FirebaseFirestoreTypes.GeoPoint;
+  url: string;
 }
 
 interface LocationCardListProps {
@@ -33,6 +33,7 @@ const LocationCardList = ({orderByHeartCount}: LocationCardListProps) => {
             locationId: doc.id,
             name: doc.get('name') as string,
             imageUrl: doc.get('imageUrl') as string,
+            url: doc.get('url') as string,
           });
         });
         setLocationList(_locationList);
@@ -53,6 +54,7 @@ const LocationCardList = ({orderByHeartCount}: LocationCardListProps) => {
             locationId={location.locationId}
             name={location.name}
             imageUrl={location.imageUrl}
+            url={location.url}
           />
         ))}
       </Row>

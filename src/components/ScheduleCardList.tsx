@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import auth from '@react-native-firebase/auth';
 import firestore, {
   FirebaseFirestoreTypes,
 } from '@react-native-firebase/firestore';
 import {ScrollView} from 'react-native';
 import ScheduleCard from '@components/ScheduleCard';
-import {Column} from '@components/Atomic';
+import {Column, SuitText} from '@components/Atomic';
+import {useRecoilState, useRecoilValue} from 'recoil';
+import scheduleListAtom from '@atoms/scheduleList';
 
 interface ScheduleCardProps {
   id: string;
@@ -14,40 +16,35 @@ interface ScheduleCardProps {
 }
 
 const ScheduleCardList = () => {
-  const [scheduleList, setScheduleList] = useState<ScheduleCardProps[]>([]);
-  useEffect(() => {
-    const userUid = auth().currentUser!.uid;
-    firestore()
-      .collection(`users/${userUid}/schedules`)
-      .orderBy('time', 'asc')
-      .onSnapshot(
-        querySnapshot => {
-          const _scheduleList: ScheduleCardProps[] = [];
-          querySnapshot.forEach((doc, _) => {
-            _scheduleList.push({
-              id: doc.id,
-              title: doc.get('title') as string,
-              time: doc.get('time') as FirebaseFirestoreTypes.Timestamp,
-            });
-          });
-          setScheduleList(_scheduleList);
-        },
-        error => {
-          console.log(error);
-        },
+  const scheduleList = useRecoilValue(scheduleListAtom);
+  const RenderSchedules = () => {
+    const list: React.ReactNode[] = [];
+    scheduleList.forEach((schedules, date) => {
+      list.push(
+        <Fragment key={date}>
+          <SuitText
+            weight={500}
+            size={16}
+            color={'#7B7B7D'}
+            style={{marginLeft: 10}}>
+            {date}
+          </SuitText>
+          {schedules.map((schedule, index) => (
+            <ScheduleCard
+              key={index}
+              title={schedule.title}
+              time={schedule.time.toDate()}
+            />
+          ))}
+        </Fragment>,
       );
-  }, []);
+    });
+    return list;
+  };
+
   return (
     <ScrollView style={{height: '100%'}}>
-      <Column gap={8}>
-        {scheduleList.map((schedule, index) => (
-          <ScheduleCard
-            key={index}
-            title={schedule.title}
-            time={schedule.time.toDate()}
-          />
-        ))}
-      </Column>
+      <Column gap={8}>{RenderSchedules()}</Column>
     </ScrollView>
   );
 };

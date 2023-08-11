@@ -2,18 +2,25 @@ import React from 'react';
 import {SuitText} from '@components/Atomic';
 import styled from 'styled-components/native';
 import Icon from '@components/Icon';
+import {TouchableOpacity} from 'react-native';
 
 interface IHeaderProps {
   title: string;
+  iconShow?: boolean;
+  callback?: () => void;
 }
 
-const Header = ({title}: IHeaderProps) => {
+const Header = ({title, iconShow, callback}: IHeaderProps) => {
   return (
     <Container>
-      <SuitText weight={800} size={28}>
+      <SuitText weight={700} size={26}>
         {title}
       </SuitText>
-      <Icon name={'notifications'} size={30} color={'#1C1B1F'} />
+      {iconShow ? (
+        <TouchableOpacity onPress={callback}>
+          <Icon name={'add'} size={30} color={'#1C1B1F'} />
+        </TouchableOpacity>
+      ) : null}
     </Container>
   );
 };
