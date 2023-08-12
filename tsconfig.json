@@ -8,7 +8,6 @@
       "@screens/*": ["screens/*"],
       "@navigation/*": ["navigation/*"],
       "@assets/*": ["assets/*"],
-      "@atoms/*": ["atoms/*"],
     }
   }
 }
