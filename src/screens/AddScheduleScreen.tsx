@@ -87,6 +87,7 @@ const Header = ({navigation, date, title}: any) => {
             .add({
               title: title,
               time: dateTimestamp,
+              checked: false,
             })
             .then(() => {
               navigation.pop();

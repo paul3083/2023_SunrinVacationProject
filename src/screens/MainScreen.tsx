@@ -13,8 +13,10 @@ import firestore, {
 } from '@react-native-firebase/firestore';
 
 interface ScheduleCardProps {
+  id: string;
   title: string;
   time: FirebaseFirestoreTypes.Timestamp;
+  checked: boolean;
 }
 const MainScreen = () => {
   const selectedDateIndex = useRecoilValue(SelectedDateIndexAtom);
@@ -29,8 +31,10 @@ const MainScreen = () => {
     console.log(d);
     d
       ? setSchedule({
+          id: d[0].id,
           title: d[0].title,
           time: d[0].time,
+          checked: d[0].checked,
         })
       : setSchedule(undefined);
   }, [scheduleList, selectedDateIndex]);
@@ -44,8 +48,10 @@ const MainScreen = () => {
           const list: ScheduleCardProps[] = [];
           querySnapshot.forEach((doc, _) => {
             list.push({
+              id: doc.id,
               title: doc.get('title') as string,
               time: doc.get('time') as FirebaseFirestoreTypes.Timestamp,
+              checked: doc.get('checked') as boolean,
             });
           });
           const _scheduleList: Map<string, ScheduleCardProps[]> = new Map();
@@ -78,7 +84,12 @@ const MainScreen = () => {
         <DateCardList />
         <Gap height={24} />
         {schedule ? (
-          <ScheduleCard title={schedule.title} time={schedule.time.toDate()} />
+          <ScheduleCard
+            id={schedule.id}
+            title={schedule.title}
+            time={schedule.time.toDate()}
+            checked={schedule.checked}
+          />
         ) : null}
         <Gap height={24} />
         <SuitText weight={500} size={16} color={'#7B7B7D'}>

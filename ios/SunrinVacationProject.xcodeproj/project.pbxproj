@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4E32736849F02A0081083798 /* Pods_SunrinVacationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97993D77119B389B7AB54F41 /* Pods_SunrinVacationProject.framework */; };
 		780A8EE92A797D430015BD31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 780A8EE82A797D430015BD31 /* GoogleService-Info.plist */; };
+		7857B39C2A88325F003F6039 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857B39B2A88325F003F6039 /* File.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B3A2837525F14F4D9EE15BDE /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B97954396E8D41A2BC67D635 /* icomoon.ttf */; };
 		F0A04D602B3E7C254A232FF8 /* Pods_SunrinVacationProject_SunrinVacationProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154FF69709EB7452C6AB8C99 /* Pods_SunrinVacationProject_SunrinVacationProjectTests.framework */; };
@@ -45,6 +46,8 @@
 		5709B34CF0A7D63546082F79 /* Pods-SunrinVacationProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunrinVacationProject.release.xcconfig"; path = "Target Support Files/Pods-SunrinVacationProject/Pods-SunrinVacationProject.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SunrinVacationProject-SunrinVacationProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunrinVacationProject-SunrinVacationProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SunrinVacationProject-SunrinVacationProjectTests/Pods-SunrinVacationProject-SunrinVacationProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		780A8EE82A797D430015BD31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7857B39A2A88325E003F6039 /* SunrinVacationProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SunrinVacationProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		7857B39B2A88325F003F6039 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SunrinVacationProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SunrinVacationProject-SunrinVacationProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunrinVacationProject-SunrinVacationProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SunrinVacationProject-SunrinVacationProjectTests/Pods-SunrinVacationProject-SunrinVacationProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		97993D77119B389B7AB54F41 /* Pods_SunrinVacationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunrinVacationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +102,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				7857B39B2A88325F003F6039 /* File.swift */,
+				7857B39A2A88325E003F6039 /* SunrinVacationProject-Bridging-Header.h */,
 			);
 			name = SunrinVacationProject;
 			sourceTree = "<group>";
@@ -226,7 +231,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -448,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				7857B39C2A88325F003F6039 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SunrinVacationProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "SunrinVacationProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -565,6 +572,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SunrinVacationProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "SunrinVacationProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
