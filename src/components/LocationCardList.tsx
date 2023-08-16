@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
-import firestore, {
-  FirebaseFirestoreTypes,
-} from '@react-native-firebase/firestore';
+import firestore from '@react-native-firebase/firestore';
 import LocationCard from '@components/LocationCard';
 import {Row} from '@components/Atomic';
 import {ScrollView, View} from 'react-native';

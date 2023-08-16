@@ -1,19 +1,9 @@
-import React, {Fragment, useEffect} from 'react';
-import auth from '@react-native-firebase/auth';
-import firestore, {
-  FirebaseFirestoreTypes,
-} from '@react-native-firebase/firestore';
+import React, {Fragment} from 'react';
 import {ScrollView} from 'react-native';
 import ScheduleCard from '@components/ScheduleCard';
 import {Column, SuitText} from '@components/Atomic';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 import scheduleListAtom from '@atoms/scheduleList';
-
-interface ScheduleCardProps {
-  id: string;
-  title: string;
-  time: FirebaseFirestoreTypes.Timestamp;
-}
 
 const ScheduleCardList = () => {
   const scheduleList = useRecoilValue(scheduleListAtom);
@@ -31,9 +21,11 @@ const ScheduleCardList = () => {
           </SuitText>
           {schedules.map((schedule, index) => (
             <ScheduleCard
+              id={schedule.id}
               key={index}
               title={schedule.title}
               time={schedule.time.toDate()}
+              checked={schedule.checked}
             />
           ))}
         </Fragment>,
